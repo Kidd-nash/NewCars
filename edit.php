@@ -25,7 +25,7 @@ include_once("./connection.php");
             <label>Model:</label>
             <input type="text" name="model" value="<?php echo $model ?>"/>
             
-            <input type="text" name="year" value="<?php echo $year ?>"/>
+            <input type="number" name="year" value="<?php echo $year ?>"/>
             <input type="hidden" name="id" value="<?php echo $editId ?>" />
             
             <input type="submit" value="submit" />

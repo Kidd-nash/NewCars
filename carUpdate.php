@@ -17,4 +17,3 @@ ob_end_clean();
 header("Location: http://localhost:8080/home.php");
 die();
 
-?>

@@ -1,4 +1,5 @@
 <?php 
+session_start();
 //Connection
 include_once("./connection.php");
 
@@ -12,6 +13,9 @@ $arr = pg_fetch_all($result);
 <html lang="en">
     <head></head>
     <body>
+        <?php if (isset($_SESSION['userName'])): ?>
+            <p>Hi, <?php echo $_SESSION['userName'] ?>
+        <?php endif; ?>
     <form method="POST" action="/newCars/create.php">
             <h2>Input Part</h2>
             <label>Brand:</label>

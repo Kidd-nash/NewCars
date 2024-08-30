@@ -12,7 +12,7 @@ $arr = pg_fetch_all($result);
 <html lang="en">
     <head></head>
     <body>
-    <form method="POST" action="/create.php">
+    <form method="POST" action="/newCars/create.php">
             <h2>Input Part</h2>
             <label>Brand:</label>
             <input type="text" name="brand" placeholder="Insert Brand..."/><br>

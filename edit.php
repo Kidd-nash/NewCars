@@ -19,6 +19,9 @@ include_once("./connection.php");
 <html lang="en">
     <head></head>
     <body>
+        <?php if (isset($_SESSION['userName'])): ?>
+            <p>Hi, <?php echo $_SESSION['userName'] ?>
+        <?php endif; ?>
         <form method="POST" action="/carUpdate.php">
             <label>Brand:</label>
             <input type="text" name="brand" value="<?php echo $brand ?>"/>

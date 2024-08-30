@@ -46,11 +46,6 @@
                 echo "Your password is: " . $password;
             ?>
         </p>
-        <p>
-            <?php 
-                echo "hashpassword: " . $hashPassword;
-            ?>
-        </p>
         <a href="http://localhost:8080/newCars/accessPage.html" target="_blank">Go to Log In</a>
     </body>
 </html>

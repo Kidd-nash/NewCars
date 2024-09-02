@@ -23,8 +23,10 @@
 		</form>
 		<a href="index.php">Reset</a>
 		<div id="form-output">
-			<p id="name"> Hello, <?= $_POST["name"]?>!</p>
-    	    <p id="best"> I am glad you enjoy <?= $_POST["best"]?>. </p>
+		    <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
+			    <p id="name">Hello, <?= htmlspecialchars($_POST["name"]) ?>!</p>
+    	    	<p id="best">I am glad you enjoy <?= htmlspecialchars($_POST["best"]) ?>.</p>
+			<?php endif; ?>
         </div>
     </body>
 </html>

@@ -4,7 +4,7 @@
         <title>Register</title>
     </head>
     <body>
-        <form>
+        <form method="POST" action="/newCars/newTrial/registeringUser.php">
             <h2>Register</h2>
             <label>E-mail:</label>
             <input type="text" name="email" placeholder="Insert Email..."/><br>

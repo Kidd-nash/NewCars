@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    $password = $_POST["password"];
    $hashPassword = md5($password);
 
-   //   $result = pg_query($conn, "INSERT INTO new_trial_users (email, userName, password) VALUES ('$e_mail','$user_name', '$hashPassword');");
+     $result = pg_query($conn, "INSERT INTO new_trial_users (email, userName, password) VALUES ('$e_mail','$user_name', '$hashPassword');");
 
 }
 ob_end_clean();

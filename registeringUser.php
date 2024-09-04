@@ -1,7 +1,7 @@
 <?php 
      ob_start();
      if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        include_once("./connection.php");
+        include_once("./secondConnection.php");
  
         $user_name = $_POST["userName"];
         $password = $_POST["password"];
@@ -9,7 +9,12 @@
          
          // TODO: add validation
  
-        $result = pg_query($conn, "INSERT INTO trial_users (userName, password) VALUES ('$user_name', '$hashPassword');");
+        // $result = pg_query($conn, "INSERT INTO trial_users (userName, password) VALUES ('$user_name', '$hashPassword');");
+
+        
+        $userQuery = $db->prepare('INSERT INTO trial_users (userName, password) VALUES (:user_name, :hashPassword);');
+        
+        $userQuery->execute(['user_name' => $user_name, 'hashPassword' => $hashPassword]);
  
      }
      ob_end_clean();

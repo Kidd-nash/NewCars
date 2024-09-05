@@ -3,6 +3,7 @@
 <html lang="en">
     <head>
         <title>Log In</title>
+        <link href="style.css" rel="stylesheet">
     </head>
     <body>
         <form method="POST" action="/newCars/newTrial/loggingInUser.php">

@@ -1,14 +1,13 @@
-<?php 
-$host = "db_postgres_lab";   
-$port = "5432";        
-$dbname = "first";  
-$user = "pguser";  
-$password = "pgpwd";  
+<?php
 
-$conn_string = "host=$host port=$port dbname=$dbname user=$user password=$password";
+$hostname = 'db_postgres_lab'; //get host name
 
-$conn = pg_connect($conn_string);
+$dbname = 'first'; // Set the database name
 
-if (!$conn) {
-    die("Connection failed: " . pg_last_error());
-}
+$username = 'pguser'; // Set the username with permissions to the database
+
+$password = 'pgpwd'; // Set the password with permissions to the database
+
+$dsn = "pgsql:host=$hostname;dbname=$dbname"; // Create the DSN (data source name) by combining the database type (PostgreSQL), hostname and dbname
+
+$db = new PDO($dsn, $username, $password); //Create PDO

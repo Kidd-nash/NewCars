@@ -1,18 +1,26 @@
 <?php 
-include_once("./connection.php");
+include_once("./secondConnection.php");
     $editId = $_GET['editId'];
-    echo $editId;
+    echo 'Editing id:' . $editId;
 
 
-   $result = pg_query($conn, "SELECT * FROM new_cars WHERE id = $editId");
+    // $result = pg_query($conn, "SELECT * FROM new_cars WHERE id = $editId");
 
-   $newCar = pg_fetch_assoc($result);
+    $userQuery = $db->prepare('SELECT * FROM new_cars WHERE id = :editId');
+    // Execute the statement here
+    $userQuery->execute(['editId' => $editId]);
 
-   $model = $newCar["model"];
+    // $newCar = pg_fetch_assoc($result);
 
-   $brand = $newCar["brand"];
+    $carQuery = $db->query('SELECT * FROM new_cars');
+    // Fetch one book using the fetch() method and assign it to the $book variable.
+    $car = $carQuery->fetch(PDO::FETCH_ASSOC);
 
-   $year = $newCar["year"];
+    $model = $car["model"];
+
+    $brand = $car["brand"];
+
+    $year = $car["year"];
 
 ?>
 <!DOCTYPE html>

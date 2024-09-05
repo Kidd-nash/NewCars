@@ -10,7 +10,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // TODO: add validation
 
-    $result = pg_query($conn, "UPDATE new_cars SET brand = '$brand', model = '$model', year = $year WHERE id = '$id'");
+    // $result = pg_query($conn, "UPDATE new_cars SET brand = '$brand', model = '$model', year = $year WHERE id = '$id'");
+
+    // Write an equivalent prepared statement here
+    $userQuery = $db->prepare("UPDATE new_cars SET brand = :brand, model = :model, year = :year WHERE id = :id");
+    // Execute the statement here
+    $userQuery->execute(['brand' => $brand, 'model' => $model, 'year' => $year]);
 
 }
 ob_end_clean();

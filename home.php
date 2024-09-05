@@ -1,7 +1,7 @@
 <?php 
 session_start();
 //Connection
-include_once("./connection.php");
+include_once("./secondConnection.php");
 
 $arr = [];
 $result = pg_query($conn, "SELECT * FROM new_cars ORDER BY id");

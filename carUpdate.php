@@ -1,7 +1,7 @@
 <?php 
 ob_start();
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    include_once("./connection.php");
+    include_once("./secondConnection.php");
 
     $id = $_POST["id"] ?? null;
     $brand = $_POST["brand"];

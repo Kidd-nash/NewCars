@@ -3,9 +3,17 @@ session_start();
 //Connection
 include_once("./secondConnection.php");
 
-$arr = [];
-$result = pg_query($conn, "SELECT * FROM new_cars ORDER BY id");
-$arr = pg_fetch_all($result);
+// $arr = [];
+// $result = pg_query($conn, "SELECT * FROM new_cars ORDER BY id");
+// $arr = pg_fetch_all($result);
+
+$carQuery = $db->query('SELECT * FROM new_cars ORDER BY id');
+
+// Fetch one book using the fetch() method and assign it to the $book variable.
+$car = $carQuery->fetch(PDO::FETCH_ASSOC);
+
+// Fetch all books using the fetchAll() method and assign the result to the $books variable.
+$cars = $carQuery->fetchAll(PDO::FETCH_ASSOC);
 
 ?> 
 
@@ -35,7 +43,7 @@ $arr = pg_fetch_all($result);
             <td>&nbsp;</td>
             </thead>
             <?php 
-                foreach($arr as $item) {
+                foreach($cars as $item) {
                     echo "<tr>";
                         echo "<td>" . $item["brand"] . "</td>";
                         echo "<td>" . $item["model"] .  "</td>";

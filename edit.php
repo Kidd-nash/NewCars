@@ -3,7 +3,6 @@ include_once("./secondConnection.php");
     $editId = $_GET['editId'];
     echo 'Editing id:' . $editId;
 
-
     // $result = pg_query($conn, "SELECT * FROM new_cars WHERE id = $editId");
 
     $carQuery = $db->prepare('SELECT * FROM new_cars WHERE id = :editId');

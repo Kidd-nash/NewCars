@@ -10,6 +10,7 @@
         </title>
     </head>
     <body>
+		<h2>Intro greet</h2>
         <form method="post" action="">
 			Your name:
 			<br>
@@ -23,7 +24,7 @@
 		</form>
 		<a href="index.php">Reset</a>
 		<div id="form-output">
-		    <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
+			<?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
 			    <p id="name">Hello, <?= htmlspecialchars($_POST["name"]) ?>!</p>
     	    	<p id="best">I am glad you enjoy <?= htmlspecialchars($_POST["best"]) ?>.</p>
 			<?php endif; ?>

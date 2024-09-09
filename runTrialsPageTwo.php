@@ -1,7 +1,7 @@
 <?php 
 
 function checkWord($input, $letter){
-    // Check if the input is set and the request is POST
+    
     if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($input) && strtolower($input[0]) !== $letter) {
         return "* This word must start with the letter {$letter}!";
     } else {
